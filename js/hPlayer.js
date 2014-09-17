@@ -30,7 +30,7 @@ var hPlayer = function() {
                  ad_link: '',
                  ad_time: 10000,
                ad_isView: false,
-                 browser: 'non-ie'
+                 browser: 'no-ie'
         },
         init:{}
     };
@@ -232,14 +232,22 @@ var hPlayer = function() {
     function API() {
         var doing = {
             status:{
-                0:'',
-                1:'Поолучение данных видео',
-                2:'Буфферизация потока',
-                3:'Воспроизведение канала',
-                4:'Пауза',
-                5:'Проигрывание остановлено',
-                6:'Окончание проигрывания потока',
-                7:'Ошибка воспроизведения потока'
+                  0:'',
+                1:'',
+                2:'',
+                3:'',
+                4:'',
+                5:'',
+                6:'',
+                7:''
+//                0:'',
+//                1:'Поолучение данных видео',
+//                2:'Буфферизация потока',
+//                3:'Воспроизведение канала',
+//                4:'Пауза',
+//                5:'Проигрывание остановлено',
+//                6:'Окончание проигрывания потока',
+//                7:'Ошибка воспроизведения потока'
             },
             items:{},
             set:function(name, value) {
@@ -492,7 +500,7 @@ var hPlayer = function() {
             hPlugin.createButton('playerControl', 'Остановить', 'ico-stop', function(event) {hPlugin.stop();});
             hPlugin.createButton('playerControl', 'Громкость', 'ico-volume-up', function(event) {hPlugin.mute();});
           $('.playerControl').append(_volume);
-            hPlugin.createButton('playerConfig', 'Настройки', 'ico-cogs', function(event) {hPlugin.config();});
+//            hPlugin.createButton('playerConfig', 'Настройки', 'ico-cogs', function(event) {hPlugin.config();});
             hPlugin.createButton('playerConfig', 'На весь экран', 'ico-fullscreen', function(event) {hPlugin.fullscreen();});
             hPlugin.volumeSlider();
         },
@@ -516,8 +524,8 @@ var hPlayer = function() {
                     par += '<param name="toolbar" value="' + hScreen.toolbar + '" />';
                     par += '<param name="loop" value="' + hScreen.loop + '" />';
                     par += '<param name="windowless" value="' + hScreen.windowless + '" />';
-                    par += '<param name="autoplay" value="' + hScreen.autoplay + '" />';
-                    el.outerHTML = '<object classid="'+ hScreen.plugin.classid +'"' +
+                    par += '<param name="autoplay" value="' + hScreen.autoplay + '" />';                                           
+                    el.outerHTML = '<object type="application/x-vlc-plugin" classid="'+ hScreen.plugin.classid +'"' +
                         att +
                         'codebase="http://download.videolan.org/pub/videolan/vlc/last/win32/axvlc.cab">' +
                         par +
@@ -526,7 +534,8 @@ var hPlayer = function() {
 
                 }
                 else {
-                    var AXO = document.createElement('object');
+                    //<embed name="vlc" id="vlc" type="application/x-vlc-plugin" pluginspage="http://www.videolan.org" version="VideoLAN.VLCPlugin.2" width="720px" height="540px" target="'+ url +'"></embed>
+                    var AXO = document.createElement('embed');
                         AXO.setAttribute("id", hInterface.n_plugin);
                         AXO.setAttribute("type", hScreen.plugin.MimeType);
                         AXO.setAttribute("bgcolor", hScreen.background);
