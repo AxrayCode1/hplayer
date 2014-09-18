@@ -496,12 +496,12 @@ var hPlayer = function() {
           var _toolbar = $('#' + hInterface.n_toolbar);
 
           _toolbar.append(_controlContiner);
-            hPlugin.createButton('playerControl', 'Проигрование / Пауза', 'ico-play', function(event) {hPlugin.play();});
-            hPlugin.createButton('playerControl', 'Остановить', 'ico-stop', function(event) {hPlugin.stop();});
-            hPlugin.createButton('playerControl', 'Громкость', 'ico-volume-up', function(event) {hPlugin.mute();});
+            hPlugin.createButton('playerControl', '', 'ico-play', function(event) {hPlugin.play();});
+            hPlugin.createButton('playerControl', '', 'ico-stop', function(event) {hPlugin.stop();});
+            hPlugin.createButton('playerControl', '', 'ico-volume-up', function(event) {hPlugin.mute();});
           $('.playerControl').append(_volume);
-//            hPlugin.createButton('playerConfig', 'Настройки', 'ico-cogs', function(event) {hPlugin.config();});
-            hPlugin.createButton('playerConfig', 'На весь экран', 'ico-fullscreen', function(event) {hPlugin.fullscreen();});
+//            hPlugin.createButton('playerConfig', '', 'ico-cogs', function(event) {hPlugin.config();});
+            hPlugin.createButton('playerConfig', '', 'ico-fullscreen', function(event) {hPlugin.fullscreen();});
             hPlugin.volumeSlider();
         },
         initPlugin:function() {
