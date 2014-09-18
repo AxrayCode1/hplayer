@@ -11,6 +11,7 @@ body {
     min-height: 720px;
 
 }
+#header{margin: 20px auto;height: 30px; width: 936px;}
 .continer{margin: 20px auto; width: 936px;}
 a {text-decoration: none;}
 input[type="text"]{
